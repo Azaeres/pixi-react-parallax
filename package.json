@@ -1,0 +1,43 @@
+{
+  "name": "pixi-react-parallax",
+  "version": "1.0.9",
+  "description": "A parallax library for @pixi/react.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "exports": {
+    "require": "./dist/index.js",
+    "import": "./dist/esm/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsup src/index.ts --format esm,cjs --legacy-output --dts --external @pixi --external pixi.js --external react && echo '{\"type\": \"commonjs\"}' > ./dist/package.json && echo '{\"type\": \"module\"}' > ./dist/esm/package.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azaeres/pixi-react-parallax.git"
+  },
+  "keywords": [
+    "pixi",
+    "react",
+    "parallax"
+  ],
+  "author": "Ryan Barry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/azaeres/pixi-react-parallax/issues"
+  },
+  "homepage": "https://github.com/azaeres/pixi-react-parallax#readme",
+  "devDependencies": {
+    "@pixi/react": "^7.1.0",
+    "@types/react": "^18.2.20",
+    "pixi.js": "^7.2.4",
+    "react": "^18.2.0",
+    "tsup": "^7.2.0",
+    "typescript": "^5.1.6"
+  },
+  "peerDependencies": {
+    "@pixi/react": ">=7.1.0",
+    "pixi.js": ">=7.2.4",
+    "react": ">=18.2.0"
+  }
+}
