@@ -1,5 +1,5 @@
 import { useEffect, useCallback, useContext, useState } from 'react'
-import * as PIXI from 'pixi.js'
+import PIXI from 'pixi.js'
 import { ParallaxCamera } from './parallax-camera/ParallaxCamera.js'
 import { ParallaxCameraContext } from './ParallaxCameraProvider.js'
 

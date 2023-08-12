@@ -4,18 +4,14 @@ import React, {
   useMemo,
   useState,
   createContext,
-  PropsWithChildren,
 } from "react";
 import {
-  AppProvider,
   Container,
   useApp,
   useTick,
-  AppContext,
 } from "@pixi/react";
-import * as PIXI from "pixi.js";
+import PIXI from "pixi.js";
 import { ParallaxCamera } from "./parallax-camera/index.ts";
-import { Application as ProjectApplication } from "@pixi/app";
 
 export const ParallaxCameraContext = createContext<ParallaxCamera | null>(null);
 

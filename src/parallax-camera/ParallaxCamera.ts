@@ -34,29 +34,18 @@ export class ParallaxCamera {
   public update() {
     if (!this.baseContainer) return
 
-    // let sw = this.renderer.width * 0.5;
-    // let sh = this.renderer.height * 0.5;
     let shakeX = 0
     let shakeY = 0
 
     // This block aligns the camera zoom origin to the target origin.
     const target = this._target
     if (this && target) {
-      // const targetBounds = target.getBounds();
       if (this.movementDamping === 0) {
-        // this.x = -target.x;
-        // this.y = -target.y;
-
-        // this.x += -this.x - target.x;
-        // this.y += -this.y - target.y;
         this.x += -this.x - target.x
         this.y += -this.y - target.y
       } else {
         this.x += (-this.x - target.x) / this.movementDamping
         this.y += (-this.y - target.y) / this.movementDamping
-
-        // this.x += ((-this.x - target.x) / this.movementDamping) + 10;
-        // this.y += ((-this.y - target.y) / this.movementDamping) + 10;
       }
     }
 
@@ -111,32 +100,11 @@ export class ParallaxCamera {
     //   // targetBoundsY = (bounds.height);
     // }
 
-    // console.log(' > this.renderer:', this.renderer)
-
-    // console.log(' > this.baseContainer:', this.baseContainer)
-    // console.log(' > tx, ty:', tx, ty)
-
-    // This moves the camera/target zoom origin to the center of the target area.
-    // const cameraOffsetX = this.renderer.width + 160;
-    // const cameraOffsetY = this.renderer.height - 60;
-    // this.baseContainer.x = this.x - tx + sw + shakeX + cameraOffsetX; //+ targetBoundsX ;
-    // this.baseContainer.y = this.y - ty + sh + shakeY + cameraOffsetY; //+ targetBoundsY;
-
-    // console.log(' > this.target?.position.x:', this.target?.position.x)
-    // console.log(' > this.baseContainer.width:', this.baseContainer.width)
-
     this.baseContainer.x = this._view.width / 2
     this.baseContainer.y = this._view.height / 2
-
-    // this.baseContainer.x = this.x - tx + shakeX; //+ targetBoundsX ;
-    // this.baseContainer.y = this.y - ty + shakeY; //+ targetBoundsY;
-    // this.baseContainer.x = this.x + (this.renderer.width * 1.304) - targetBoundsX;
-    // this.baseContainer.y = this.y + (this.renderer.height * 1.304) - targetBoundsY;
   }
 
   public addLayer(layer: ParallaxLayer) {
-    // const firstChild = layer.children[0];
-    // console.log('\naddLayer  > layer:', firstChild.name, layer.zIndex);
     if (layer['pz'] == null) throw Error('Add Layer: Layers need to be a ParallaxLayer.')
 
     if (this.layers.indexOf(layer) === -1) {
@@ -171,27 +139,10 @@ export class ParallaxCamera {
   }
 
   public zsort() {
-    // console.log(
-    //   '\nzsort  > this.layers:',
-    //   [...this.layers].map(
-    //     (layer) => `${layer.children[0].name}: ${layer.zIndex}`
-    //   )
-    // );
     this.layers = this.layers.sort((a: ParallaxLayer, b: ParallaxLayer) => a.pz - b.pz)
-    // console.log(
-    //   'sorted layers  > [...this.layers]:',
-    //   [...this.layers].map(
-    //     (layer) => `${layer.children[0].name}: ${layer.zIndex}`
-    //   )
-    // );
     this.baseContainer?.children.sort(
       (a: PIXI.DisplayObject, b: PIXI.DisplayObject) => a.zIndex - b.zIndex
     )
-    // console.log(' > this.baseContainer?.children:', this.baseContainer?.children)
-    // Old version didn't account for non-parallax layers added to the base container.
-    // for (let i = 0; i < this.layers.length; ++i) {
-    //   this.baseContainer && this.baseContainer.addChildAt(this.layers[i], i);
-    // }
   }
 
   public dispose() {
