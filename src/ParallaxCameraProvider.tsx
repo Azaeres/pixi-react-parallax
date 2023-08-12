@@ -5,11 +5,7 @@ import React, {
   useState,
   createContext,
 } from "react";
-import {
-  Container,
-  useApp,
-  useTick,
-} from "@pixi/react";
+import { Container, useApp, useTick } from "@pixi/react";
 import PIXI from "pixi.js";
 import { ParallaxCamera } from "./parallax-camera/index.ts";
 
@@ -26,6 +22,7 @@ export function ParallaxCameraProvider(props: ParallaxCameraProps) {
 
   const camera = useMemo(() => {
     if (baseContainer) {
+      // TODO: Expose the focal length and movement damping parameters as props, instead of hard-coding the arguments here.
       return new ParallaxCamera(view, renderer, baseContainer, 300, 10);
     } else {
       return null;
