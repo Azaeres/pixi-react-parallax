@@ -1,6 +1,6 @@
 {
   "name": "pixi-react-parallax",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "A parallax library for @pixi/react.",
   "type": "module",
   "main": "./dist/index.js",
