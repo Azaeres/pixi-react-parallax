@@ -10,7 +10,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsup src/index.ts --format esm,cjs --legacy-output --dts --external @pixi --external pixi.js --external react && echo '{\"type\": \"commonjs\"}' > ./dist/package.json && echo '{\"type\": \"module\"}' > ./dist/esm/package.json"
+    "build": "tsup src/index.ts --format esm,cjs --legacy-output --dts --external @pixi --external pixi.js --external react && echo '{\"type\": \"commonjs\"}' > ./dist/package.json && echo '{\"type\": \"module\"}' > ./dist/esm/package.json",
+    "pack": "yarn version --patch && yarn build && yarn pack"
   },
   "repository": {
     "type": "git",

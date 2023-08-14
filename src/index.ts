@@ -1,8 +1,5 @@
-export {
-  ParallaxCameraProvider,
-  ParallaxCameraContext,
-  ParallaxCameraProps,
-} from "./ParallaxCameraProvider.js";
-export { ParallaxLayer, ParallaxLayerProps } from "./ParallaxLayer.js";
-export { useParallaxCameraRef } from "./useParallaxCameraRef.ts";
-export { useParallaxCameraTarget } from "./useParallaxCameraTarget.ts";
+export { ParallaxCameraProvider, ParallaxCameraContext } from './ParallaxCameraProvider.tsx'
+export type { ParallaxCameraProps } from './ParallaxCameraProvider.tsx'
+export { ParallaxLayer } from './ParallaxLayer.tsx'
+export type { ParallaxLayerProps } from './ParallaxLayer.tsx'
+export { useParallaxCameraRef } from './useParallaxCameraRef.ts'

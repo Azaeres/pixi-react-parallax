@@ -3,7 +3,7 @@ import { PixiComponent } from '@pixi/react'
 import { ParallaxLayer as ParallaxLayerContainer } from './parallax-camera/ParallaxLayer.ts'
 import { ParallaxCameraContext } from './ParallaxCameraProvider.tsx'
 
-export type ParallaxLayerProps = {
+export interface ParallaxLayerProps {
   zIndex?: number
   children?: React.ReactNode
 }
