@@ -102,7 +102,10 @@ Hook that returns the camera target, and a setter that can be passed into a Disp
 ```ts
 import { useParallaxCameraRef } from 'pixi-react-parallax'
 
-const [cameraTargetRef, setCameraTargetRef] = useParallaxCameraRef()
+function MyComponent() {
+  const [cameraTargetRef, setCameraTargetRef] = useParallaxCameraRef()
+  // ...
+}
 ```
 
 ### `ParallaxCameraContext`
