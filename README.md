@@ -51,7 +51,7 @@ function MyComponent() {
       </ParallaxLayer>
       <ParallaxLayer zIndex={0}>
         <Text
-          text="100"
+          text="0"
           x={200}
           y={200}
           scale={2}

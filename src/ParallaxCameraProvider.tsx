@@ -1,12 +1,11 @@
 import React, {
-  useEffect,
   useCallback,
   useMemo,
   useState,
   createContext,
 } from "react";
-import { Container, useApp, useTick, Text, withFilters } from "@pixi/react";
-import PIXI, { TextStyle } from "pixi.js";
+import { Container, useApp, useTick } from "@pixi/react";
+import PIXI from "pixi.js";
 import { ParallaxCamera } from "./parallax-camera/index.ts";
 
 export const ParallaxCameraContext = createContext<ParallaxCamera | null>(null)
